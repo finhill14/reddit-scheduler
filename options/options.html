@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reddit Scheduler — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Reddit Scheduler</h1>
+      <p class="subtitle">Settings</p>
+    </header>
+
+    <main>
+
+      <!-- ── Google Drive Connection ─────────────────────────────────── -->
+      <section class="card" id="section-drive">
+        <h2>Google Drive Connection</h2>
+
+        <div class="field-row" id="email-row" hidden>
+          <span class="label">Authorized as</span>
+          <span class="value" id="authorized-email"></span>
+        </div>
+
+        <div class="btn-row">
+          <button id="btn-auth" class="btn-primary">
+            Connect Google Drive
+          </button>
+          <span class="status-msg" id="auth-status"></span>
+        </div>
+
+        <!-- Redirect URI helper — user must add this to Google Cloud Console -->
+        <details class="redirect-details">
+          <summary>Setup: add redirect URI to Google Cloud Console</summary>
+          <p>
+            In your Google Cloud Console → Credentials → your
+            <strong>Web Application</strong> OAuth 2.0 client ID, add the
+            following URL to <strong>Authorized redirect URIs</strong>:
+          </p>
+          <div class="copy-row">
+            <code id="redirect-uri" class="redirect-uri">loading…</code>
+            <button class="btn-copy" id="btn-copy-uri" title="Copy to clipboard">
+              Copy
+            </button>
+          </div>
+        </details>
+      </section>
+
+    </main>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>
